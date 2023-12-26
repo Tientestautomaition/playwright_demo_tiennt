@@ -10,12 +10,12 @@ export class WebActions {
         await this.page.goto(url);
     }
     async waitForURL(url: string, timeout = 10000): Promise<void> {
-        await this.page.waitForURL(url,{ timeout });
+        await this.page.waitForURL(url, { timeout });
     }
     async waitForLoadState(): Promise<void> {
         await this.page.waitForLoadState();
     }
-    async waitForElement(selector: string, timeout = 5000): Promise<void> {
+    async waitForElement(selector: string, timeout = 10000): Promise<void> {
         await this.page.waitForSelector(selector, { timeout });
     }
     async clickElement(selector: string): Promise<void> {
@@ -125,13 +125,17 @@ export class WebActions {
     async switchToNewWindow(selector: string): Promise<Page> {
         let [newPage] = [this.page];
         [newPage] = await Promise.all([
-          this.page.context().waitForEvent("page"),
-          await this.clickElement(selector),
+            this.page.context().waitForEvent("page"),
+            await this.clickElement(selector),
         ]);
         await newPage.waitForLoadState()
         return newPage;
-      }
-
+    }
+    async selectOptionInCustomerDropdown( parent: string, child: string, expectedText: string) {
+        await this.page.click(parent);
+        await this.page.waitForTimeout(1000);
+        return this.page.locator(child).filter({ hasText: expectedText }).click();
+    }
 }
 module.exports = { WebActions }
 

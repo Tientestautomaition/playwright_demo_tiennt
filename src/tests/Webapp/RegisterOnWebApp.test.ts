@@ -1,7 +1,6 @@
-//import { expect, test } from "../tests/base/Fixture";
 import { test } from '@playwright/test';
-import WebHomePage from '../pages/WebApp/WebHomePage';
-import { GlobalConstants } from '../core/utils/GlobalConstants';
+import WebHomePage from '../../pages/WebApp/WebHomePage';
+import { GlobalConstants } from '../../core/utils/GlobalConstants';
 import { faker } from "@faker-js/faker"
 
 

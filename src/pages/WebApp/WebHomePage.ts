@@ -1,4 +1,4 @@
-import { ElementHandle, expect, Page } from "@playwright/test";
+import { expect, Page } from "@playwright/test";
 import { WebHomeLocator } from "./WebHomeLocator";
 import { WebActions } from "../../core/actions/WebActions";
 import Assert from "../../core/asserts/Asserts";
@@ -66,12 +66,24 @@ export default class WebHomePage {
         }
     }
     async clickOnButtonConfirm(): Promise<void> {
-        await expect (this.assert.isElementEnable(WebHomeLocator.confirmButton)).toBeTruthy();
+        await expect(this.assert.isElementEnable(WebHomeLocator.confirmButton)).toBeTruthy();
         await this.webActions.clickElement(WebHomeLocator.confirmButton);
     }
 
     async verifyMsgErrorConfirmCodeIsDisplay(): Promise<void> {
         const isDisplayed = await this.assert.isElementVisible(WebHomeLocator.msgErrorConfirmCode);
         expect(isDisplayed).toBeTruthy();
+    }
+    async clickOnExamReviewToolMenu(): Promise<void> {
+        await this.webActions.clickElement(WebHomeLocator.examReviewToolMenu);
+    }
+    async clickOnExamReviewToolSubMenu(): Promise<void> {
+        await this.webActions.clickElement(WebHomeLocator.examReviewToolSubMenu);
+    }
+    async clickOnSelfStudyCourseMenu(): Promise<void> {
+        await this.webActions.clickElement(WebHomeLocator.selfStudyCourseMenu);
+    }
+    async clickOnSelfStudyCourseSubMenu(): Promise<void> {
+        await this.webActions.clickElement(WebHomeLocator.selfStudyCourseSubMenu);
     }
 }

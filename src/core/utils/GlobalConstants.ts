@@ -9,5 +9,8 @@ export class GlobalConstants {
     static readonly ncbBankAccountCardNumber: string = "9704198526191432198";
     static readonly ncbBankAccountCardHolder: string = "NGUYEN VAN A";
     static readonly ncbBankAccountCardDate: string = "0715";
-    static readonly ncbBankAccountOtp: string = "123456";}
-    
+    static readonly ncbBankAccountOtp: string = "123456";
+    static readonly linkUrlAdminLogin: string = "https://admin-dev.appigv.vmo.group/log_in";
+    static readonly usernameAdmin: string = "super_admin";
+    static readonly passwordAdmin: string = "Admin@123";
+}
