@@ -1,22 +1,22 @@
-import { expect, Page } from "@playwright/test";
+import { ElementHandle, expect, Page } from "@playwright/test";
 import { WebHomeLocator } from "./WebHomeLocator";
 import { WebActions } from "../../core/actions/WebActions";
-
+import Assert from "../../core/asserts/Asserts";
 
 
 export default class WebHomePage {
     [x: string]: any;
-    static sendKeysConfirmCode: any;
-    static clickOnButtonConfirm: any;
-    static sendKeysConfirmPassword(password: string) {
-        throw new Error('Method not implemented.');
-    }
+
+
     page: Page
     webActions: WebActions
+    assert: Assert
+
 
     constructor(page: Page) {
         this.page = page
         this.webActions = new WebActions(page);
+        this.assert = new Assert(page);
     }
 
     async gotoPage(baseURl: string): Promise<void> {
@@ -54,5 +54,24 @@ export default class WebHomePage {
 
     async clickOnButtonSubmit(): Promise<void> {
         await this.webActions.clickElement(WebHomeLocator.submit);
+    }
+
+    async sendKeysConfirmCode(confirmCode: string): Promise<void> {
+        for (let i = 1; i < 7; i++) {
+            const stringValue = i.toString();
+            console.log(stringValue);
+            this.webActions.fillInputField(WebHomeLocator.confirmCodeTxt.replace("%", stringValue), confirmCode)
+            console.log(WebHomeLocator.confirmCodeTxt.replace("%S", stringValue));
+
+        }
+    }
+    async clickOnButtonConfirm(): Promise<void> {
+        await expect (this.assert.isElementEnable(WebHomeLocator.confirmButton)).toBeTruthy();
+        await this.webActions.clickElement(WebHomeLocator.confirmButton);
+    }
+
+    async verifyMsgErrorConfirmCodeIsDisplay(): Promise<void> {
+        const isDisplayed = await this.assert.isElementVisible(WebHomeLocator.msgErrorConfirmCode);
+        expect(isDisplayed).toBeTruthy();
     }
 }

@@ -8,7 +8,7 @@ export const WebHomeLocator = {
     confirmPasswordTxt: "//input[@name='confirmPassword']",
     submit: "//button[contains(@type,'submit')]//div[contains(text(),'Đăng ký')]",
     confirmPopup: "//div[text()='Xác thực tài khoản']",
-    confirmCodeTxt: "//input[contains(@aria-label,'Character %s')]",
+    confirmCodeTxt: "//input[contains(@aria-label,'Character %')]",
     confirmButton: "//button[contains(.,'Xác nhận')]",
     msgErrorConfirmCode: "//div[contains(text(),'Mã xác thực không hợp lệ')]",
     loginButton: "//div[contains(text(),'Đăng nhập')]",

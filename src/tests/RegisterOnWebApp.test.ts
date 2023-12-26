@@ -29,5 +29,8 @@ test.describe('@IGV: RegisterWebAppObject - RegisterWebAppUnsuccessful', () => {
     await webHomePage.sendKeysPassword(GlobalConstants.password);
     await webHomePage.sendKeysConfirmPassword(GlobalConstants.password);
     await webHomePage.clickOnButtonSubmit();
+    await webHomePage.sendKeysConfirmCode("7");
+    await webHomePage.clickOnButtonConfirm();
+    await webHomePage.verifyMsgErrorConfirmCodeIsDisplay();
   });
 });
