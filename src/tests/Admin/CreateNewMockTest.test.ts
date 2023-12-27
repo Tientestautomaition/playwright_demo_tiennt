@@ -1,6 +1,6 @@
 import { test } from '@playwright/test';
 import { GlobalConstants } from '../../core/utils/GlobalConstants';
-import LoginAdminPage from '../../pages/loginOnAdmin/LoginAdminPage';
+import LoginAdminPage from '../../pages/LoginOnAdmin/LoginAdminPage';
 import CreateNewMockTestPage from '../../pages/MockTest/CreateNewMockTestPage';
 
 

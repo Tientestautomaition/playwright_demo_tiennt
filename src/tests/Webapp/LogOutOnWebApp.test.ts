@@ -1,7 +1,7 @@
 import { test } from '@playwright/test';
 import WebHomePage from '../../pages/WebApp/WebHomePage';
 import { GlobalConstants } from '../../core/utils/GlobalConstants';
-import LoginPage from '../../pages/loginWebPage/LoginWebAppPage';
+import LoginPage from '../../pages/LoginWebPage/LoginWebAppPage';
 
 
 test.describe('@IGV: LogInAndLogOutWebAppObject - LogInAndLogOutWebAppSuccessful', () => {
@@ -15,7 +15,7 @@ test.describe('@IGV: LogInAndLogOutWebAppObject - LogInAndLogOutWebAppSuccessful
 
   });
 
-  test('TC07_LOGIN_ON_WEBAPP_SUCCESSFUL', async () => {
+  test('TC07_LOGOUT_ON_WEBAPP_SUCCESSFUL', async () => {
     await webHomePage.gotoPage(GlobalConstants.webUrl);
     await webHomePage.verifyTitle('IIG Elearning');
     await loginPage.logInOnWebApp(GlobalConstants.username, GlobalConstants.password);

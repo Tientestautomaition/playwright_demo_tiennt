@@ -1,7 +1,7 @@
 import { test } from '@playwright/test';
 import WebHomePage from '../../pages/WebApp/WebHomePage';
 import { GlobalConstants } from '../../core/utils/GlobalConstants';
-import LoginPage from '../../pages/loginWebPage/LoginWebAppPage';
+import LoginPage from '../../pages/LoginWebPage/LoginWebAppPage';
 import BuyExamReviewPage from '../../pages/ExamReview/BuyExamReviewPage';
 
 
