@@ -24,10 +24,7 @@ test.describe('@IGV: ExamManagement - CreateNewExamSuccessful', () => {
     test('TC9_Create_A_New_Mock_Test_Successful', async () => {
         await loginAdminPage.gotoPage(GlobalConstants.linkUrlAdminLogin);
         await loginAdminPage.verifyTitle("IIG Admin");
-        await loginAdminPage.sendKeysUserName(GlobalConstants.usernameAdmin);
-        await loginAdminPage.sendKeysPassword(GlobalConstants.passwordAdmin);
-        await loginAdminPage.clickOnLoginButton();
-        await loginAdminPage.verifyLoginSuccessfully();
+        await loginAdminPage.logInOnAdminSuccessfully(GlobalConstants.usernameAdmin,GlobalConstants.passwordAdmin);
         await mockTestPage.clickOnMockTestManagementMenu();
         await mockTestPage.clickOnMockTestList();
         await mockTestPage.verifyOnMockTestListPage();
