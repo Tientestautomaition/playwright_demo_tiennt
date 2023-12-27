@@ -5,7 +5,7 @@ import LoginPage from '../../pages/LoginWebPage/LoginWebAppPage';
 import SeflStudyCoursePage from '../../pages/SelfStudyCourse/SeflStudyCoursePage';
 
 
-test.describe('@IGV: ExamReviewTool - BuyExamReviewToolSuccessful', () => {
+test.describe('@IGV: SeflStudyCourse - BuySeflStudyCourseSuccessful', () => {
     let webHomePage: WebHomePage;
     let loginPage: LoginPage;
     let seflStudyCoursePage: SeflStudyCoursePage;
