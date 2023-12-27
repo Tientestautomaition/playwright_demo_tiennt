@@ -40,5 +40,10 @@ export default class LoginAdminPage {
         const isDisplayed = await this.assert.isElementVisible(loginAdminLocators.msgLoginSuccessful);
         expect(isDisplayed).toBeTruthy();
     }
-
+    async logInOnAdminSuccessfully(username: string,password: string): Promise<void> {
+        await this.sendKeysUserName(username);
+        await this.sendKeysPassword(password);
+        await this.clickOnLoginButton();
+        await this.verifyLoginSuccessfully();
+    }
 }
