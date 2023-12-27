@@ -30,7 +30,7 @@ export default class SeflStudyCoursePage {
         await this.webActions.waitForElement(SeflStudyCourseLocators.selfStudyCourseDetailTitle);
         const isDisplayed = await this.assert.isElementVisible(SeflStudyCourseLocators.selfStudyCourseDetailTitle);
         expect(isDisplayed).toBeTruthy();
-    } 
+    }
     async clickOnAddToCardButton(): Promise<void> {
         await this.webActions.clickElement(SeflStudyCourseLocators.addToCartBtn);
     }
@@ -93,4 +93,47 @@ export default class SeflStudyCoursePage {
         const isDisplayed = await this.assert.isElementVisible(SeflStudyCourseLocators.paymentSuccessTitle);
         expect(isDisplayed).toBeTruthy();
     }
+    async clickOnStartSelfStudyCourseButton(): Promise<void> {
+        await this.webActions.clickElement(SeflStudyCourseLocators.startLessonBtn);
+    }
+    async verifyOnCourseDetailSuccessful(): Promise<void> {
+        await this.webActions.waitForElement(SeflStudyCourseLocators.nameCourseTitle);
+        const isDisplayed = await this.assert.isElementVisible(SeflStudyCourseLocators.nameCourseTitle);
+        expect(isDisplayed).toBeTruthy();
+    }
+    async hoverOnUnitLabel(): Promise<void> {
+        await this.page.locator(SeflStudyCourseLocators.unit2).hover({force: true, timeout : 2000});
+    }
+    async verifyRedoButtonIsDisplay(): Promise<void> {
+        await this.webActions.waitForElement(SeflStudyCourseLocators.redoBtn);
+        const isDisplayed = await this.assert.isElementVisible(SeflStudyCourseLocators.redoBtn);
+        expect(isDisplayed).toBeTruthy();
+    }
+    async verifyViewResultButtonIsDisplay(): Promise<void> {
+        await this.webActions.waitForElement(SeflStudyCourseLocators.viewResultBtn);
+        const isDisplayed = await this.assert.isElementVisible(SeflStudyCourseLocators.viewResultBtn);
+        expect(isDisplayed).toBeTruthy();
+    }
+    async clickOnViewResultButton(): Promise<void> {
+        await this.webActions.clickElement(SeflStudyCourseLocators.viewResultBtn);
+    }
+    async verifyOnTestResultScreen(): Promise<void> {
+        await this.webActions.waitForElement(SeflStudyCourseLocators.testResultTitle);
+        const isDisplayed = await this.assert.isElementVisible(SeflStudyCourseLocators.testResultTitle);
+        expect(isDisplayed).toBeTruthy();
+    }
+    async verifySeeResultButtonIsDisplay(): Promise<void> {
+        await this.webActions.waitForElement(SeflStudyCourseLocators.seeResultBtn);
+        const isDisplayed = await this.assert.isElementVisible(SeflStudyCourseLocators.seeResultBtn);
+        expect(isDisplayed).toBeTruthy();
+    }
+    async clickOnVSeeResultButton(): Promise<void> {
+        await this.webActions.clickElement(SeflStudyCourseLocators.seeResultBtn);
+    }
+    async verifySeeResultCorrectAnswerIsDisplay(): Promise<void> {
+        await this.webActions.waitForElement(SeflStudyCourseLocators.correctAnswerLabel);
+        const isDisplayed = await this.assert.isElementVisible(SeflStudyCourseLocators.correctAnswerLabel);
+        expect(isDisplayed).toBeTruthy();
+    }
+
 }

@@ -86,4 +86,7 @@ export default class WebHomePage {
     async clickOnSelfStudyCourseSubMenu(): Promise<void> {
         await this.webActions.clickElement(WebHomeLocator.selfStudyCourseSubMenu);
     }
+    async clickOnSelfStudyCourseButton(): Promise<void> {
+        await this.webActions.clickElement(WebHomeLocator.myCourseBtn);
+    }
 }
