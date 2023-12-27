@@ -63,7 +63,8 @@ export default class BuyExamReviewPage {
         await this.webActions.clickElement(BuyExamReviewLocators.paymentMethodBankAccountTitle);
     }
     async clickOnNCBBankButton(): Promise<void> {
-        await this.webActions.clickElement(BuyExamReviewLocators.ncbBankBtn);
+        await this.webActions.clickElement(BuyExamReviewLocators.ncbBankBtn)
+        await this.page.reload();
     }
     async verifyPaymentNCBPaymentPopupIsDisplay(): Promise<void> {
         await this.webActions.waitForElement(BuyExamReviewLocators.paymentViaNCBBankTitle);

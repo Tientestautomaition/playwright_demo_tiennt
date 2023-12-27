@@ -64,6 +64,7 @@ export default class SeflStudyCoursePage {
     }
     async clickOnNCBBankButton(): Promise<void> {
         await this.webActions.clickElement(SeflStudyCourseLocators.ncbBankBtn);
+        await this.page.reload();
     }
     async verifyPaymentNCBPaymentPopupIsDisplay(): Promise<void> {
         await this.webActions.waitForElement(SeflStudyCourseLocators.paymentViaNCBBankTitle);
