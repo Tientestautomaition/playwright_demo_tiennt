@@ -71,6 +71,7 @@ export default class WebHomePage {
     }
 
     async verifyMsgErrorConfirmCodeIsDisplay(): Promise<void> {
+        await this.webActions.waitForElement(WebHomeLocator.msgErrorConfirmCode);
         const isDisplayed = await this.assert.isElementVisible(WebHomeLocator.msgErrorConfirmCode);
         expect(isDisplayed).toBeTruthy();
     }
